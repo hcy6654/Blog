@@ -16,10 +16,15 @@ code {
 header {
   display: flex;
   justify-content: space-between;
-  flex-direction: row-reverse;
+  /* flex-direction: row-reverse; */
   border-bottom: 1px solid #f2f2f2;
   min-height: 40px;
   align-items: center;
+}
+header .header_logo {
+  color: black;
+  font-weight: 600;
+  font-size: 18px;
 }
 header a {
   margin: 0px 10px;
@@ -66,7 +71,8 @@ footer a:focus {
   font-weight: 600;
 }
 
-.post-list {
+.post_list,
+.post_detail {
   min-height: 90vh;
   padding: 20px;
   text-align: left;
@@ -129,5 +135,64 @@ footer a:focus {
 }
 .post_edit:hover,
 .post_edit:focus {
+  color: black;
+}
+
+/* post_detail */
+.post_detail .post_title {
+  font-size: 36px;
+  line-height: 40px;
+}
+.post_detail .post_untils-box {
+  padding: 10px 0;
+  border-top: 1px solid #f2f2f2;
+  border-bottom: 1px solid #f2f2f2;
+  flex-direction: row;
+}
+.post_detail .post_profile-box {
+  padding: 10px 0;
+}
+.post_detail .post_text {
+  padding: 20px 0;
+}
+
+/* profile */
+.profile_box {
+  display: flex;
+  gap: 18px;
+  align-items: center;
+  font-size: 18px;
+  margin: 0 auto;
+  max-width: 680px;
+  text-align: left;
+  line-height: 24px;
+  justify-content: space-between;
+  padding: 20px;
+}
+
+.flex_box-lg {
+  display: flex;
+  gap: 18px;
+  align-items: center;
+}
+.profile_image {
+  width: 72px;
+  height: 72px;
+  background-color: #f2f2f2;
+  border-radius: 50%;
+}
+.profile_name {
+  font-size: 16px;
+  padding-top: 4px;
+}
+.profile_email {
+  font-weight: 500;
+}
+.profile_logout {
+  color: gray;
+  font-size: 14px;
+}
+.profile_logout:hover,
+.profile_logout:focus {
   color: black;
 }
