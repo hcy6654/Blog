@@ -1,11 +1,8 @@
 {
   "compilerOptions": {
+    "baseUrl": "src", //절대 경로를 기준으로하는 기본 directory
     "target": "es5",
-    "lib": [
-      "dom",
-      "dom.iterable",
-      "esnext"
-    ],
+    "lib": ["dom", "dom.iterable", "esnext"],
     "allowJs": true,
     "skipLibCheck": true,
     "esModuleInterop": true,
@@ -20,7 +17,11 @@
     "noEmit": true,
     "jsx": "react-jsx"
   },
-  "include": [
-    "src"
-  ]
+  "include": ["src"],
+  "paths": {
+    "pages/*": ["pages/*"],
+    "components/*": ["components/*"]
+    //module 이름과 해당 module의 경로를 mapping하는 설정
+  }
 }
+//프로젝트가 커질수록 상대경로로 사용하는 경우 관리가 어렵고 파일 접근하는데 복잡해짐
