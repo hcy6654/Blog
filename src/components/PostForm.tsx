@@ -12,7 +12,7 @@ export default function PostForm() {
         </div>
         <div className="form_block">
           <label htmlFor="content">내용</label>
-          <input type="text" name="content" id="content" required />
+          <textarea name="content" id="content" required />
         </div>
         <div className="form_block">
           <input type="submit" value="제출" className="form_btn-submit" />

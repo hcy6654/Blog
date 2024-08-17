@@ -86,6 +86,10 @@ footer a:focus {
   border-top: 1px solid #f2f2f2;
 }
 
+.post_box a {
+  text-decoration: none;
+}
+
 .post_profile-box {
   display: flex;
   gap: 8px;
@@ -109,6 +113,7 @@ footer a:focus {
   font-size: 20px;
   font-weight: 600;
   margin: 14px 0;
+  color: black;
 }
 
 .post_text {
@@ -129,13 +134,27 @@ footer a:focus {
   color: gray;
 }
 
+.post_delete,
+.post_edit {
+  cursor: pointer;
+}
+
 .post_delete:hover,
-.post_delete:focus {
+.post_delete:focus,
+.post_delete a:hover,
+.post_delete a:focus {
   color: black;
 }
 .post_edit:hover,
-.post_edit:focus {
+.post_edit:focus,
+.post_edit a:hover,
+.post_edit a:focus {
   color: black;
+}
+
+.post_edit a {
+  text-decoration: none;
+  color: gray;
 }
 
 /* post_detail */
@@ -327,14 +346,14 @@ input:checked + .carousel__slide-container .nav label {
   display: block;
 }
 
-.form {
+form {
   margin: 0 auto;
   max-width: 680px;
   padding: 20px;
   margin-top: 20px;
 }
 
-.form input {
+form input {
   height: 20px;
   padding: 10px;
   font-size: 16px;
@@ -343,7 +362,7 @@ input:checked + .carousel__slide-container .nav label {
   max-width: 680px;
 }
 
-.form textarea {
+form textarea {
   min-height: 400px;
   padding: 10px;
   line-height: 1.5;
@@ -353,19 +372,19 @@ input:checked + .carousel__slide-container .nav label {
   max-width: 680px;
 }
 
-.form .form_block {
+form .form_block {
   margin-top: 20px;
   width: 100%;
 }
 
-.form label {
+form label {
   display: block;
   font-weight: 500;
   margin-bottom: 10px;
   margin-top: 20px;
 }
 
-.form .form_btn-submit {
+form .form_btn-submit {
   width: 100%;
   height: 48px;
   padding: 10px;
@@ -375,9 +394,10 @@ input:checked + .carousel__slide-container .nav label {
   font-size: 16px;
   background-color: #2563eb;
   color: white;
+  border: none;
 }
 
-.form .form_btn-submit:hover,
-.form .form_btn-submit:focus {
+form .form_btn-submit:hover,
+form .form_btn-submit:focus {
   background-color: #1945a4;
 }
