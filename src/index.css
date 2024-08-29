@@ -401,3 +401,25 @@ form .form_btn-submit:hover,
 form .form_btn-submit:focus {
   background-color: #1945a4;
 }
+
+/* Login form */
+.form--lg {
+  min-height: 70vh;
+  margin-top: 10vh;
+}
+
+.form_title {
+  text-align: center;
+  margin-bottom: 4px;
+}
+
+.form_link {
+  margin-left: 10px;
+  text-decoration: none;
+  color: gray;
+}
+
+.form_link:hover,
+.form_link:focus {
+  color: black;
+}
