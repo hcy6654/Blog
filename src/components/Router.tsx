@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { Route, Routes, Navigate } from "react-router-dom";
 import Home from "../pages/home";
 import PostsPage from "../pages/post";
@@ -9,18 +10,29 @@ import PostPage from "../pages/post/postdetail";
 import ProfilePage from "../pages/profile";
 
 export default function Router() {
+  const [isAuthenticated, setIsAuthenticated] = useState<boolean>(false);
   return (
     <>
       <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/posts" element={<PostsPage />} />
-        <Route path="/posts/:id" element={<PostPage />} />
-        <Route path="/posts/new" element={<PostNew />} />
-        <Route path="/posts/edit/:id" element={<PostEdit />} />
-        <Route path="profile" element={<ProfilePage />} />
-        <Route path="login" element={<Login />} />
-        <Route path="signin" element={<Signin />} />
-        <Route path="*" element={<Navigate replace to="/" />} />
+        {isAuthenticated ? (
+          <>
+            <Route path="/" element={<Home />} />
+            <Route path="/posts" element={<PostsPage />} />
+            <Route path="/posts/:id" element={<PostPage />} />
+            <Route path="/posts/new" element={<PostNew />} />
+            <Route path="/posts/edit/:id" element={<PostEdit />} />
+            <Route path="profile" element={<ProfilePage />} />
+            <Route path="login" element={<Login />} />
+            <Route path="signin" element={<Signin />} />
+            <Route path="*" element={<Navigate replace to="/" />} />
+          </>
+        ) : (
+          <>
+            <Route path="login" element={<Login />} />
+            <Route path="signin" element={<Signin />} />
+            <Route path="*" element={<Login />} />
+          </>
+        )}
       </Routes>
     </>
   );
