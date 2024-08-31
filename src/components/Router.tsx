@@ -9,8 +9,11 @@ import Signin from "../pages/signin";
 import PostPage from "../pages/post/postdetail";
 import ProfilePage from "../pages/profile";
 
-export default function Router() {
-  const [isAuthenticated, setIsAuthenticated] = useState<boolean>(false);
+interface RouterProps {
+  isAuthenticated: boolean;
+}
+
+export default function Router({ isAuthenticated }: RouterProps) {
   return (
     <>
       <Routes>
