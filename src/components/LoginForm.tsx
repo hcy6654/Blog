@@ -15,7 +15,7 @@ export default function LoginForm() {
         </div>
         <div className="form_block">
           계정이 없으신가요?{" "}
-          <Link to="/signup" className="form_link">
+          <Link to="/signin" className="form_link">
             회원가입하기
           </Link>
         </div>

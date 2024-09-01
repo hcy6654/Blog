@@ -14,6 +14,7 @@ interface RouterProps {
 }
 
 export default function Router({ isAuthenticated }: RouterProps) {
+  console.log("isAuthenticated : ", isAuthenticated);
   return (
     <>
       <Routes>

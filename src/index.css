@@ -423,3 +423,7 @@ form .form_btn-submit:focus {
 .form_link:focus {
   color: black;
 }
+
+.form_error {
+  color: red;
+}
