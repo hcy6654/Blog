@@ -5,7 +5,7 @@ React의 활용을 학습하기 위해 만드는 토이 프로젝트
 ## 사용스택
 
 - React
-- Firebase
+- Firebase(Authentication, Firestore, Storage, Hosting)
 - Html, Css, TypeScript
 - Vercel
 
@@ -34,8 +34,8 @@ React의 활용을 학습하기 위해 만드는 토이 프로젝트
 
   7.사용자 프로필 페이지(Velog,Medium st)
 
-  7.다크모드
+  8.다크모드
 
-  8.내가 쓴 글
+  9.내가 쓴 글
 
-  9.댓글 CRUD
+  10.댓글 CRUD
