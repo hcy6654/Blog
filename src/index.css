@@ -444,3 +444,11 @@ form .form_btn-submit:focus {
   border-radius: 50%;
   z-index: 9999;
 }
+
+.post_nopost {
+  padding: 24px;
+  text-align: center;
+  color: gray;
+  border: 1px solid #f2f2f2;
+  border-radius: 20px;
+}
