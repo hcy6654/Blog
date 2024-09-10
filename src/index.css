@@ -452,3 +452,7 @@ form .form_btn-submit:focus {
   border: 1px solid #f2f2f2;
   border-radius: 20px;
 }
+
+.post_text_prewrap {
+  white-space: pre-wrap;
+}
