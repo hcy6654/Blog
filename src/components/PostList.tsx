@@ -14,6 +14,7 @@ export interface PostProps {
   summary: string;
   content: string;
   creatAt: string;
+  uid: string;
 }
 
 type TabType = "all" | "my";

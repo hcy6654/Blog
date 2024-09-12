@@ -43,7 +43,7 @@ export default function PostDetail() {
                 삭제
               </div>
               <div className="post_edit">
-                <Link to={`/post/edit/1`}>수정</Link>
+                <Link to={`/post/edit/${post?.id}`}>수정</Link>
               </div>
             </div>
             <div className="post_text post_text_prewrap">{post?.content}</div>
