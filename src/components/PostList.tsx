@@ -1,8 +1,9 @@
 import AuthContext from "context/AuthContext";
-import { collection, getDocs } from "firebase/firestore";
+import { collection, deleteDoc, doc, getDocs } from "firebase/firestore";
 import { db } from "firebaseApp";
 import { useContext, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import { toast } from "react-toastify";
 
 interface PostListProps {
   hasNavigation?: boolean;
@@ -23,17 +24,28 @@ export default function PostList({ hasNavigation = true }: PostListProps) {
   const [activeTap, setActiveTab] = useState<TabType>("all");
   const [posts, setPosts] = useState<PostProps[]>([]);
   const { user } = useContext(AuthContext);
+
+  const handleDelete = async (id: string) => {
+    const confirm = window.confirm("해당 게시글을 삭제하시겠습니까?");
+    if (confirm && id) {
+      await deleteDoc(doc(db, "post", id));
+      toast.success("게시글을 삭제했습니다.");
+      getPosts();
+    }
+  };
+
   const getPosts = async () => {
     const datas = await getDocs(collection(db, "posts"));
-
+    setPosts([]);
     datas.forEach((doc) => {
       const dataObj = { ...doc.data(), id: doc.id };
       setPosts((prev) => [...prev, dataObj as PostProps]);
     });
   };
+
   useEffect(() => {
     getPosts();
-  }, [posts]);
+  }, []);
 
   return (
     <>
@@ -71,7 +83,13 @@ export default function PostList({ hasNavigation = true }: PostListProps) {
 
               {post?.email === user?.email && (
                 <div className="post_utils-box">
-                  <div className="post_delete">삭제</div>
+                  <div
+                    className="post_delete"
+                    role="presentation"
+                    onClick={() => handleDelete}
+                  >
+                    삭제
+                  </div>
                   <Link to={`/post/edit/${post?.id}}`} className="post_edit">
                     수정
                   </Link>
